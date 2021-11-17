@@ -1,19 +1,17 @@
 import classes from "./TaskList.module.scss";
 
-export const TaskList = () => {
+export const TaskList = (props) => {
   return (
     <div className={classes.inner}>
       <ul>
-        <li className={classes.item}>
-          <span>Task1</span>
-          <i class="far fa-trash-alt"></i>
-        </li>
-        <li className={classes.item}>
-          <span>
-            Task2Task2Task2Task2Task2Task2Task2Task2Task2Task2Task2Task2Task2Task2Task2Task2
-          </span>
-          <i class="far fa-trash-alt"></i>
-        </li>
+        {props.todos.map((todo, index) => {
+          return (
+            <li key={index} className={classes.item}>
+              <span>{todo}</span>
+              <i className="far fa-trash-alt"></i>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
