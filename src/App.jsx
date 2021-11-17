@@ -1,7 +1,14 @@
 import React from "react";
+import classes from "./App.module.scss";
+import { AddTask } from "./components/AddTask";
+import { TaskList } from "./components/TaskList";
 
 export const App = () => {
   return (
-    <h1>Hello World!</h1>
+    <div className={classes.container}>
+      <h1 className={classes.title}>Todo List</h1>
+      <AddTask />
+      <TaskList />
+    </div>
   );
 };
