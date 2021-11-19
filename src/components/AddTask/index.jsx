@@ -9,8 +9,8 @@ export const AddTask = (props) => {
         <InputPrimary
           todoText={props.todoText}
           setTodoText={props.setTodoText}
-          todos={props.todos}
-          setTodos={props.setTodos}
+          todoList={props.todoList}
+          setTodoList={props.setTodoList}
         />
       </p>
     </div>

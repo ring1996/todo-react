@@ -7,7 +7,7 @@ export const InputPrimary = (props) => {
   const onKeyPressInput = (e) => {
     if (e.key === "Enter") {
       const newTodo = e.target.value;
-      props.setTodos([...props.todos, newTodo]);
+      props.setTodoList([...props.todoList, newTodo]);
       props.setTodoText("");
     }
   };

@@ -2,14 +2,14 @@ import classes from "./TaskList.module.scss";
 
 export const TaskList = (props) => {
   const onClickDeleteTodo = (index) => {
-    const newTodos = [...props.todos];
-    newTodos.splice(index, 1);
-    props.setTodos(newTodos);
+    const newTodoList = [...props.todoList];
+    newTodoList.splice(index, 1);
+    props.setTodoList(newTodoList);
   };
   return (
     <div className={classes.inner}>
       <ul>
-        {props.todos.map((todo, index) => {
+        {props.todoList.map((todo, index) => {
           return (
             <li
               key={index}

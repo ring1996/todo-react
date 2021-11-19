@@ -5,17 +5,17 @@ import { TaskList } from "./components/TaskList";
 
 export const App = () => {
   const [todoText, setTodoText] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [todoList, setTodoList] = useState([]);
   return (
     <div className={classes.container}>
       <h1 className={classes.title}>Todo List</h1>
       <AddTask
         todoText={todoText}
         setTodoText={setTodoText}
-        todos={todos}
-        setTodos={setTodos}
+        todoList={todoList}
+        setTodoList={setTodoList}
       />
-      <TaskList todos={todos} setTodos={setTodos} />
+      <TaskList todoList={todoList} setTodoList={setTodoList} />
     </div>
   );
 };
