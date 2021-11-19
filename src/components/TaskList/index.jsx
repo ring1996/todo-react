@@ -2,8 +2,9 @@ import classes from "./TaskList.module.scss";
 
 export const TaskList = (props) => {
   const onClickDeleteTodo = (index) => {
-    const newTodoList = [...props.todoList];
-    newTodoList.splice(index, 1);
+    const newTodoList = props.todoList.filter(
+      (todoItem) => props.todoList[index] !== todoItem
+    );
     props.setTodoList(newTodoList);
   };
   return (
