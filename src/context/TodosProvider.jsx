@@ -10,7 +10,9 @@ export const TodosProvider = (props) => {
     setTodos([...todos, newTodo]);
   };
   const removeTodos = (index) => {
-    setTodos(todos.filter((todoItem) => todos[index] !== todoItem));
+    if (window.confirm("todoを削除してもいいですか？")) {
+      setTodos(todos.filter((todoItem) => todos[index] !== todoItem));
+    }
   };
   return (
     <TodosContext.Provider value={{ todos, setTodos, addTodos, removeTodos }}>
