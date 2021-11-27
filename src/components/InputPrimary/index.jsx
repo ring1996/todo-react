@@ -1,17 +1,17 @@
 import { useState } from "react";
 import classes from "./InputPrimary.module.scss";
-import { useTodoList } from "./../../context/TodoListProvider";
+import { useTodos } from "../../context/TodosProvider";
 
 export const InputPrimary = () => {
-  const { addTodoList } = useTodoList();
-  const [todoText, setTodoText] = useState("");
-  const onChangeTodoText = (e) => {
-    setTodoText(e.target.value);
+  const { addTodos } = useTodos();
+  const [inputText, setInputText] = useState("");
+  const onChangeInputText = (e) => {
+    setInputText(e.target.value);
   };
-  const onKeyPressInput = (e) => {
+  const onKeyDownInputEnter = (e) => {
     if (e.key === "Enter") {
-      addTodoList(e.target.value);
-      setTodoText("");
+      addTodos(e.target.value);
+      setInputText("");
     }
   };
   return (
@@ -19,9 +19,9 @@ export const InputPrimary = () => {
       className={classes.input}
       type="text"
       placeholder="New Task"
-      value={todoText}
-      onChange={onChangeTodoText}
-      onKeyPress={onKeyPressInput}
+      value={inputText}
+      onChange={onChangeInputText}
+      onKeyDown={onKeyDownInputEnter}
     />
   );
 };
