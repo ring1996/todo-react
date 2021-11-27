@@ -11,7 +11,9 @@ export const TodosProvider = (props) => {
   };
   const removeTodos = (index) => {
     if (window.confirm("todoを削除してもいいですか？")) {
-      setTodos(todos.filter((todoItem) => todos[index] !== todoItem));
+      const newTodos = [...todos];
+      newTodos.splice(index, 1);
+      setTodos(newTodos);
     }
   };
   return (
