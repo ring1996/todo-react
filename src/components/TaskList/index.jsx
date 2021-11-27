@@ -1,20 +1,17 @@
 import classes from "./TaskList.module.scss";
+import { useTodoList } from "./../../context/TodoListProvider";
 
-export const TaskList = (props) => {
-  const onClickDeleteTodo = (index) => {
-    const newTodos = [...props.todos];
-    newTodos.splice(index, 1);
-    props.setTodos(newTodos);
-  };
+export const TaskList = () => {
+  const { todoList, removeTodoList } = useTodoList();
   return (
     <div className={classes.inner}>
       <ul>
-        {props.todos.map((todo, index) => {
+        {todoList.map((todo, index) => {
           return (
             <li
               key={index}
               className={classes.item}
-              onClick={() => onClickDeleteTodo(index)}
+              onClick={() => removeTodoList(index)}
             >
               <span>{todo}</span>
               <i className="far fa-trash-alt"></i>
