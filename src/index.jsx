@@ -3,11 +3,11 @@ import "./base.scss";
 import React from "react";
 import ReactDOM from "react-dom";
 import { App } from "./App";
-import { TodoListProvider } from "./context/TodoListProvider";
+import { TodosProvider } from "./context/TodosProvider";
 
 ReactDOM.render(
-  <TodoListProvider>
+  <TodosProvider>
     <App />
-  </TodoListProvider>,
+  </TodosProvider>,
   document.getElementById("root")
 );
