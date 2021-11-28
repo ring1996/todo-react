@@ -5,7 +5,7 @@ const TodosContext = createContext();
 export const useTodos = () => useContext(TodosContext);
 
 export const TodosProvider = (props) => {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(["Task1", "Task2"]);
   const addTodos = (newTodo) => {
     setTodos([...todos, newTodo]);
   };
