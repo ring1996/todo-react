@@ -6,13 +6,13 @@ export const TaskList = () => {
   return (
     <div className={classes.inner}>
       <ul>
-        {todos.map((todo, index) => {
+        {todos.map((todo) => {
           return (
-            <li key={index} className={classes.item}>
-              <span>{todo}</span>
+            <li key={todo.id} className={classes.item}>
+              <span>{todo.title}</span>
               <i
                 className="far fa-trash-alt"
-                onClick={() => removeTodos(index)}
+                onClick={() => removeTodos(todo.id)}
               ></i>
             </li>
           );
