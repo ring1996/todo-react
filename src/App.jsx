@@ -9,6 +9,10 @@ import { TaskList } from "./components/TaskList";
 /* styles */
 import classes from "./App.module.scss";
 
+/**
+ * App
+ * @returns
+ */
 export const App = () => {
   return (
     <div className={classes.container}>
