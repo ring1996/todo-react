@@ -1,4 +1,9 @@
 /**
+ * 初期データ一覧
+ * @package constants
+ */
+
+/**
  * Todoリスト初期値
  */
 export const INIT_TODO_LIST = [
