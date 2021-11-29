@@ -64,11 +64,15 @@ export const TodosProvider = (props) => {
    * タスク削除処理
    * @param {*} index
    */
-  const removeTodos = (index) => {
+  const removeTodos = (targetId) => {
     if (window.confirm("todoを削除してもいいですか？")) {
-      const newTodos = [...todos];
-      newTodos.splice(index, 1);
-      setTodos(newTodos);
+      // Todoのデータ構造を変更したので、処理を変更する (ただの配列ではなく、オブジェクト配列になったため)
+      // const newTodos = [...todos];
+      // newTodos.splice(index, 1);
+      // 削除するid以外のtodoリストを再編集
+      const newTodoList = todos.filter((todo) => todo.id !== targetId);
+      // todoを削除したtodo listで更新
+      setTodos(newTodoList);
     }
   };
 
