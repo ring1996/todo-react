@@ -1,21 +1,31 @@
-import { createContext, useContext, useState } from "react";
+/**
+ * TodosProvider
+ * @package contexts
+ */
+import { createContext, useContext } from "react";
+/* constants */
+import { useTodoProvider } from "./useTodosProvider";
 
+/**
+ * TodosContext
+ */
 const TodosContext = createContext();
 
+/**
+ * useTodos
+ * @returns
+ */
 export const useTodos = () => useContext(TodosContext);
 
+/**
+ * TodosProvider
+ * @param {*} props
+ * @returns
+ */
 export const TodosProvider = (props) => {
-  const [todos, setTodos] = useState(["Task1", "Task2"]);
-  const addTodos = (newTodo) => {
-    setTodos([...todos, newTodo]);
-  };
-  const removeTodos = (index) => {
-    if (window.confirm("todoを削除してもいいですか？")) {
-      const newTodos = [...todos];
-      newTodos.splice(index, 1);
-      setTodos(newTodos);
-    }
-  };
+  /* hooks */
+  const { todos, setTodos, addTodos, removeTodos } = useTodoProvider();
+
   return (
     <TodosContext.Provider value={{ todos, setTodos, addTodos, removeTodos }}>
       {props.children}
